@@ -46,7 +46,7 @@ export default defineConfig({
 
 1. Make sure Astro is in SSR mode (`output: "server"` set in `astro.config.mjs`)
 
-2. Put your `config.yml` file in `public/admin/config.yml` (see [Decap CMS Docs](https://decapcms.org/docs/add-to-your-site/#configuration) for more info)
+2. Create a file `config.yml` in `public/admin/config.yml` with the below text. (see [Decap CMS Docs](https://decapcms.org/docs/add-to-your-site/#configuration) for more info)
 
 ```yml
 backend:
@@ -66,7 +66,8 @@ On GitHub, go to Settings > Developer Settings > OAuth apps > New OAuth app. Or 
 
 **Authorization callback URL**: This must be the prod URL of your application followed by `/oauth/callback`.
 
-4. Set env variables
+4. GitHub OAuth: Generate a new client secret
+5. Set env variables - using your newly generated client secret and the client ID from your GitHub Oauth app. (If you're using Netlify, put them in Site Configuration -> Environment Variables)
 
 ```bash
 OAUTH_GITHUB_CLIENT_ID=
